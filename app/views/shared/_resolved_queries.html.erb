@@ -1,4 +1,4 @@
-<div id="resolved" class="tab-pane fade">
+<div id="resolved" class="tab-pane fade <%= @resolved_active %>">
 	<% @resolved.each do |query| %>
 		<%= render 'shared/query_display', query: query %>
      <% end %>

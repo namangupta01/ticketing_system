@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Admin Section</h2>
+  <ul class="nav nav-pills">
+  	<li class="active"><a data-toggle="pill" href="#employees">Employees</a></li>
+    <li><a data-toggle="pill" href="#all">All Queries</a></li>
+    <li><a data-toggle="pill" href="#unresolved">Unresolved Queries</a></li>
+    <li><a data-toggle="pill" href="#resolved">Resolved Queries</a></li>
+  </ul>
+  <div class="tab-content">
+  	<%= render 'employees' %>
+  	<%= render 'shared/all_queries' %>
+  	<%= render 'shared/unresolved_queries' %>
+  	<%= render 'shared/resolved_queries' %>	
+  </div>
+</div>

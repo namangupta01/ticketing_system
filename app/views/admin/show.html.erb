@@ -1,0 +1,35 @@
+<div class="container">
+	<a href="/admin/index">Back</a>
+	<a href="/">Home</a>
+</div>
+
+<div class="container employee-detail-page">
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th>Field</th>
+	      <th>Details</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<tr>
+	      <td>employee Number</td>
+	      <td><%= @employee.id %></td>
+	    </tr>
+	    <tr>
+	      <td>Email</td>
+	      <td><%= @employee.email %></td>
+	    </tr>
+	    <tr>
+	      <td><strong>Query Solved</strong></td>
+	      <td><strong><%= @employee.query_solved_count %></strong> </td>
+	    </tr>
+	  </tbody>
+	</table>
+</div>
+<div class="container">
+	<h3>Queries resoved by the Employee</h3>
+	<% @employee.query_solveds.each do |query_solved| %>
+		<%= render 'shared/query_display', query: query_solved.query %>
+	<% end %>
+</div>

@@ -6,11 +6,12 @@
 	    		<p>Submitted By: <strong><%= query.name %></strong> on <strong><%= query.created_at.to_date %></strong>.&nbsp&nbsp&nbsp
 	    			<button type="button" class="btn btn-default">
 	    			 <% if query.query_resolved == true %>
-	    			 	<%= "Resolved" %>
+	    			 	<%= "Resolved" %></button></p>
+	    			 	<p> Query Resolved By:
+	    			 	<strong><%= query.query_solved.user.email %></strong></p>
 	    			 <% else %>
-	    			 	<%= "Unresolved" %>
+	    			 	<%= "Unresolved" %></button></p>
 	    			 <% end %>
-	    		</button></p>
 		</div>
 	</div>
 	<a href="/query/show?id=<%= query.id %>">See More</a>

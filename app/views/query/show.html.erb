@@ -1,6 +1,6 @@
 <div class="container">
-	<a href="">Back</a>
-	<a href="">Home</a>
+	<a href="/employee/index">Back</a>
+	<a href="/">Home</a>
 </div>
 
 <div class="container query-detail-page">
@@ -53,9 +53,9 @@
 	    </tr>
 	  </tbody>
 	</table>
-	<% if @query.query_resolved == true %>
+	<% if @query.query_resolved == true && @query.query_solved.user.email == current_user.email %>
 		<a href="/employee/query/?id=<%= @query.id %>" role="button" class="btn btn-warning">Mark as Unresolved</a>
-	<% else %>
+	<% elsif @query.query_resolved == false %>
 		<a href="/employee/query?id=<%= @query.id %>" role="button" class="btn btn-warning">Mark as Resolved</a>
 	<% end %>
 </div>

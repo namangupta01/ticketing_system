@@ -1,0 +1,15 @@
+<br>
+<div id="employees" class="tab-pane fade in active">
+	<% @employees.each do |employee| %>
+		<div class="query-section">
+	<div>
+		<h3><%= employee.email %></h3>
+		<div class="inner">
+			<h4>Employee id <%= employee.id %></h4>
+	    	<p>Number of query solved <%= employee.query_solved_count %></p>
+		</div>
+	</div>
+	<a href="/admin/show?id=<%= employee.id %>">See More</a>
+</div>
+     <% end %>
+</div>

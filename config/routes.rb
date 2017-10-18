@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   post '/query/create'
   get '/query/show'
   get 'employee/query'
+  get '/home/role_selector'
+  get 'admin/index'
+  get 'admin/show'
 end

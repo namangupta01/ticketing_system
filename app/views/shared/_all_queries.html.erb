@@ -1,5 +1,5 @@
 <br>
-<div id="all" class="tab-pane fade in active">
+<div id="all" class="tab-pane fade <%= @all_active %>">
 	<% @all.each do |query| %>
 		<%= render 'shared/query_display', query: query %>
      <% end %>
