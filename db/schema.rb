@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018055935) do
+ActiveRecord::Schema.define(version: 20171018104224) do
 
   create_table "queries", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20171018055935) do
     t.datetime "updated_at", null: false
     t.boolean "query_resolved", default: false
     t.string "title"
+  end
+
+  create_table "query_mappers", force: :cascade do |t|
+    t.string "random_string"
+    t.integer "query_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["query_id"], name: "index_query_mappers_on_query_id"
   end
 
   create_table "users", force: :cascade do |t|

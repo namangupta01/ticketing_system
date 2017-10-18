@@ -1,10 +1,16 @@
-
 <div class="query-section">
 	<div>
 		<h3><%= query.title %></h3>
 		<div class="inner">
 			<h4>Query no. <%= query.id %></h4>
-	    		<p>Submitted By: <strong><%= query.name %></strong> on <strong><%= query.created_at.to_date %></strong></p>
+	    		<p>Submitted By: <strong><%= query.name %></strong> on <strong><%= query.created_at.to_date %></strong>.&nbsp&nbsp&nbsp
+	    			<button type="button" class="btn btn-default">
+	    			 <% if query.query_resolved == true %>
+	    			 	<%= "Resolved" %>
+	    			 <% else %>
+	    			 	<%= "Unresolved" %>
+	    			 <% end %>
+	    		</button></p>
 		</div>
 	</div>
 	<a href="/query/show?id=<%= query.id %>">See More</a>

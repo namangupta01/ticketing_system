@@ -7,6 +7,7 @@ class QueryController < ApplicationController
 	def create
 		@query = Query.new(permit_params)
 		@query.save
+		QueryMailer.query_submitted(@query).deliver_later
 	end
 
 

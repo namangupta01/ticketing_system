@@ -9,6 +9,13 @@ class EmployeeController < ApplicationController
 
 	def query
 		query = Query.find(params[:id])
+		if(query.query_resolved == true)
+			QueryMailer.query_unresolved(query).deliver_later
+		else
+			random = SecureRandom.hex
+			query_mapper = QueryMapper.create(random_string: random,query_id: params[:id])
+			QueryMailer.query_resolved(query).deliver_later
+		end
 		query.query_resolved = !query.query_resolved
 		query.save
 		redirect_to '/employee/index'

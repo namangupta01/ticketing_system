@@ -1,0 +1,2 @@
+class QueryMapper < ApplicationRecord
+end

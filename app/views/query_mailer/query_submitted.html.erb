@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank You <%= @query.name %>!</h1>
+    <p>
+      You have successfully submitted the query <br>
+    </p>
+    <p>Your query details are as Follows</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Query Number</td>
+        <td><%= @query.id %></td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td><%= @query.name %></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><%= @query.email %></td>
+      </tr>
+      <tr>
+        <td>Phone Number </td>
+        <td><%= @query.phone_number %></td>
+      </tr>
+      <tr>
+        <td>Query Title </td>
+        <td><%= @query.title %></td>
+      </tr>
+      <tr>
+        <td>Query Details</td>
+        <td><%= @query.query %></td>
+      </tr>
+      <tr>
+        <td>Created at</td>
+        <td><%= @query.created_at.to_date %></td>
+      </tr>
+      <tr>
+        <td><strong>Status</strong></td>
+        <td>
+          <% if @query.query_resolved == true %>
+            <strong>Resolved</strong>
+          <% else %>
+            <strong>Unresolved</strong>
+          <% end %>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+    <p>We will contact you soon!</p>
+  </body>
+</html>
