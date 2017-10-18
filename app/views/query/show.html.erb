@@ -1,0 +1,61 @@
+<div class="container">
+	<a href="">Back</a>
+	<a href="">Home</a>
+</div>
+
+<div class="container query-detail-page">
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th>Field</th>
+	      <th>Details</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<tr>
+	      <td>Query Number</td>
+	      <td><%= @query.id %></td>
+	    </tr>
+	    <tr>
+	      <td>Name</td>
+	      <td><%= @query.name %></td>
+	    </tr>
+	    <tr>
+	      <td>Email</td>
+	      <td><%= @query.email %></td>
+	    </tr>
+	    <tr>
+	      <td>Phone Number </td>
+	      <td><%= @query.phone_number %></td>
+	    </tr>
+	    <tr>
+	      <td>Query Title </td>
+	      <td><%= @query.title %></td>
+	    </tr>
+	    <tr>
+	      <td>Query Details</td>
+	      <td><%= @query.query %></td>
+	    </tr>
+	    <tr>
+	      <td>Created at</td>
+	      <td><%= @query.created_at.to_date %></td>
+	    </tr>
+	    <tr>
+	      <td><strong>Status</strong></td>
+	      <td>
+	      	<% if @query.query_resolved == true %>
+	      		<strong>Resolved</strong>
+	      	<% else %>
+	      		<strong>Unresolved</strong>
+	      	<% end %>
+
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+	<% if @query.query_resolved == true %>
+		<a href="/employee/query/?id=<%= @query.id %>" role="button" class="btn btn-warning">Mark as Unresolved</a>
+	<% else %>
+		<a href="/employee/query?id=<%= @query.id %>" role="button" class="btn btn-warning">Mark as Resolved</a>
+	<% end %>
+</div>

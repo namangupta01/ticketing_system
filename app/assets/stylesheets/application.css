@@ -14,12 +14,34 @@
  *= require_self
  */
 
-
 body{
-	padding-left: 50px;
+	padding-top: 0px;
+	margin-top: 0px;
 }
 
 .form-group{
 	margin-top: 20px;
 	width: 500px;
+}
+
+.header{
+	padding: 1px;
+	height: 50px;
+	margin-top: 0px;
+	background-color: #eaecef;
+}
+
+
+.query-section{
+	margin: 20px;
+	background-color: #eaecef;
+	display: flex;
+	justify-content: space-between;
+	align-items :center;
+	padding-left: 10px;
+	padding-right: 25px;
+}
+
+.inner{
+	margin-left: 20px;
 }

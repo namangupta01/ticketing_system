@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get '/employee/index'
   get '/query/new'
   post '/query/create'
+  get '/query/show'
+  get 'employee/query'
 end

@@ -1,8 +1,5 @@
 <div id="unresolved" class="tab-pane fade">
 	<% @unresolved.each do |query| %>
-	<div class="container-fluid">
-      <h3><%= query.query %></h3>
-      <p></p>
-    </div>
+		<%= render 'shared/query_display', query: query %>	
      <% end %>
 </div>
