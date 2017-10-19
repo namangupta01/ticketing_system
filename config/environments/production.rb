@@ -77,7 +77,7 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
 
-    config.action_mailer.default_url_options = { host: 'immense-journey-98023.herokuapp.com' }
+    config.action_mailer.default_url_options = { host: 'ticketing-system-app.herokuapp.com' }
 
   config.action_mailer.delivery_method = :smtp
 
