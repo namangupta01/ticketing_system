@@ -12,8 +12,9 @@ class User < ApplicationRecord
 
 
   def first_user
-  	if self ==User.first
+  	if self == User.first
   		self.role = "admin"
+      self.save
   	end
   end
 
