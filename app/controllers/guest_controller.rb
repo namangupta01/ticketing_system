@@ -3,7 +3,6 @@ class GuestController < ApplicationController
 	def mark_unresolved
 		random_string = params[:id]
 		if QueryMapper.where(random_string: random_string).first
-			byebug
 			query_mapper = QueryMapper.where(random_string: random_string).first
 			query = query_mapper.query
 			query_solved = query.query_solved

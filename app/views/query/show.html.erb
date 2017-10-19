@@ -57,7 +57,7 @@
 	    </tr>
 	  </tbody>
 	</table>
-	<% if (@query.query_resolved == true && @query.query_solved.user.email == current_user.email) || current_user.role == "admin" %>
+	<% if @query.query_resolved == true && ( @query.query_solved.user.email == current_user.email || current_user.role == "admin" ) %>
 		<a href="/employee/query/?id=<%= @query.id %>" role="button" class="btn btn-warning">Mark as Unresolved</a>
 	<% elsif @query.query_resolved == false %>
 		<a href="/employee/query?id=<%= @query.id %>" role="button" class="btn btn-warning">Mark as Resolved</a>
