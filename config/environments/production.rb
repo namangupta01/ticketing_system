@@ -76,6 +76,22 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+
+    config.action_mailer.default_url_options = { host: 'immense-journey-98023.herokuapp.com' }
+
+  config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'gmail.com',
+  user_name:            'railsproject283@gmail.com',
+  password:             'railsprojects',
+  authentication:       :plain,
+  enable_starttls_auto: true
+}
+
+
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
