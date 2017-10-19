@@ -17,7 +17,7 @@ class EmployeeController < ApplicationController
 			random = SecureRandom.hex
 			query_resolved = QuerySolved.create(query_id: query.id, user_id: current_user.id).save
 			query_mapper = QueryMapper.create(random_string: random,query_id: params[:id])
-			QueryMailer.query_resolved(query).deliver_later
+			QueryMailer.query_resolved(query,query_mapper).deliver_later
 		end
 		query.query_resolved = !query.query_resolved
 		query.save

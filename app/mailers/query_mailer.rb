@@ -6,8 +6,9 @@ class QueryMailer < ApplicationMailer
 		mail(to: @query.email,subject: 'Thank You for asking us query. We will contact you soon!')
 	end
 
-	def query_resolved(query)
+	def query_resolved(query,query_mapper)
 		@query = query
+		@query_mapper = query_mapper
 		mail(to: @query.email,subject: 'About Query you have Submitted!')
 	end
 

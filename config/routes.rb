@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/home/role_selector'
   get 'admin/index'
   get 'admin/show'
+  get '/guest/mark_unresolved'
 end
