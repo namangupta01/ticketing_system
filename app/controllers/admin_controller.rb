@@ -10,6 +10,7 @@ class AdminController < ApplicationController
 	end
 
 	def show
+		
 		@employee = User.find(params[:id])
 	end
 
