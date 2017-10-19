@@ -4,13 +4,13 @@
 		<div class="inner">
 			<h4>Query no. <%= query.id %></h4>
 	    		<p>Submitted By: <strong><%= query.name %></strong> on <strong><%= query.created_at.to_date %></strong>.&nbsp&nbsp&nbsp
-	    			<button type="button" class="btn btn-default">
+	    			<span class="button">
 	    			 <% if query.query_resolved == true %>
-	    			 	<%= "Resolved" %></button></p>
+	    			 	<%= "Resolved" %></span></p>
 	    			 	<p> Query Resolved By:
 	    			 	<strong><%= query.query_solved.user.email %></strong></p>
 	    			 <% else %>
-	    			 	<%= "Unresolved" %></button></p>
+	    			 	<%= "Unresolved" %></span></p>
 	    			 <% end %>
 		</div>
 	</div>
