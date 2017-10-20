@@ -28,7 +28,7 @@
 	</table>
 </div>
 <div class="container">
-	<h3>Queries resoved by the Employee</h3>
+	<h3>Queries resolved by the Employee</h3>
 	<% @employee.query_solveds.each do |query_solved| %>
 		<%= render 'shared/query_display', query: query_solved.query %>
 	<% end %>
